@@ -1,36 +1,56 @@
 <html>
     <head>
         <title>Blame It On the Network DOT COM</title>
+        <link rel="stylesheet" href="simple.min.css">
         <script src="jquery-3.7.1.min.js"></script>
-    </head>>
+    </head>
     <body>
-        <h1>Blame It On the Network DOT COOOOMMMMMMM</h1>
-        <form id="problem" method="post" action="">
-            <div>
-                <label for="description">Please describe your problem:</label>
-                <input type="text" id="description" name="description"></input>
-                <input type="submit" value="Submit" />
+        <header>
+            <h1>Blame It On the Network DOT COOOOMMMMMMM</h1>
+        </header>
+        <main>
+            <div class="notice">
+            <h4>Describe your problem below. Some examples are:</h4>
+                <bl>
+                    <li>When I type an invalid URL into my browser, I get a 404 error.</li>
+                    <li>It takes 3 clicks to get to an image. I want it to take 2.</li>
+                    <li>The screen is upside down.</li>
+                    <li>My dog keeps peeing on the floor.</li>
+                    <li>My wife left me for another man.</li>
+                </bl>
             </div>
-            <div>
-                <b>Analysis:</b>
-                <span id="analysis"></span>
-            </div>
-        </form>
+            <form id="problem" method="post" action="">
+                <div>
+                    <label for="description">Please describe your problem:</label>
+                    <input type="text" id="description" name="description"></input>
+                    <input type="submit" value="Submit" />
+                </div>
+                <section>
+                    <h3>Analysis:</h3>
+                    <div class="notice" id="analysis"></div>
+                </section>
+            </form>
+        </main>
+        <footer>
+            Copyright 2025, The Network Admins. All rights belong to the Network gods.
+        </footer>
 
         <script type="text/javascript">
             const messages = [
                 "It's definitely the network.",
                 "Clearly the VPN is broken.",
-                "Perhaps the SCP is configu.....nevermind, it's the network.",
+                "Perhaps the SCP isn't configu.....nevermind, it's the network.",
                 "Have you looked at the network?",
-                "It's got to be a routing issue... in the network."
+                "It's got to be a routing issue... in the network.",
+                "It's not you, it's the network."
             ]
 
             $(document).ready(function() {
                 $('#problem').submit(function(e) {
+                    
                     e.preventDefault();
-
-                    $('#analysis').text(messages[Math.floor(Math.random() * 5)]);
+                    
+                    $('#analysis').text(messages[Math.floor(Math.random() * messages.length)]);
                 })
             })
         </script>
