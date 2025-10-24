@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Blame It On the Network DOT COM</title>
+        <script src="jquery-3.7.1.min.js"></script>
+    </head>>
+    <body>
+        <h1>Blame It On the Network DOT COOOOMMMMMMM</h1>
+        <form id="problem" method="post" action="">
+            <div>
+                <label for="description">Please describe your problem:</label>
+                <input type="text" id="description" name="description"></input>
+                <input type="submit" value="Submit" />
+            </div>
+            <div>
+                <b>Analysis:</b>
+                <span id="analysis"></span>
+            </div>
+        </form>
+
+        <script type="text/javascript">
+            const messages = [
+                "It's definitely the network.",
+                "Clearly the VPN is broken.",
+                "Perhaps the SCP is configu.....nevermind, it's the network.",
+                "Have you looked at the network?",
+                "It's got to be a routing issue... in the network."
+            ]
+
+            $(document).ready(function() {
+                $('#problem').submit(function(e) {
+                    e.preventDefault();
+
+                    $('#analysis').text(messages[Math.floor(Math.random() * 5)]);
+                })
+            })
+        </script>
+    </body>
+</html>
